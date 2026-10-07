@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .font-orbitron {
+    font-family: 'Orbitron', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  .font-chakra {
+    font-family: 'Chakra Petch', -apple-system, BlinkMacSystemFont, monospace, sans-serif;
+  }
+  .font-syne {
+    font-family: 'Syne', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  .font-space {
+    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  
+  .glow-cyan-title {
+    text-shadow: 0 0 25px rgba(6, 182, 212, 0.6), 0 0 50px rgba(6, 182, 212, 0.25);
+  }
+  .glow-emerald-title {
+    text-shadow: 0 0 25px rgba(52, 211, 153, 0.5), 0 0 50px rgba(52, 211, 153, 0.2);
+  }
+
+  /* Responsive site-wide container system for fullscreen & large screens */
+  .site-container {
+    width: 100%;
+    max-width: 1680px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: clamp(1rem, 3.2vw, 4.5rem);
+    padding-right: clamp(1rem, 3.2vw, 4.5rem);
+  }
+
+  @media (min-width: 1920px) {
+    .site-container {
+      max-width: 1760px;
+      padding-left: 5rem;
+      padding-right: 5rem;
+    }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark light;
+  }
+
+  /* Accessible focus indicators */
+  *:focus-visible {
+    outline: 2px solid #06b6d4;
+    outline-offset: 2px;
+  }
+
+  /* Support for light mode theme when toggled */
+  .light-mode-theme {
+    filter: invert(0.92) hue-rotate(180deg);
+  }
+
+  .light-mode-theme img,
+  .light-mode-theme canvas,
+  .light-mode-theme video,
+  .light-mode-theme svg {
+    filter: invert(1) hue-rotate(180deg);
+  }
+}
